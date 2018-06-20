@@ -8,23 +8,11 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
   <body>
-    <svg width="2000" height="1000">
-      <defs>
-        <filter id="f1" x="0" y="0" width="200%" height="200%">
-          <feOffset result="offOut" in="SourceAlpha" dx="5" dy="5" />
-          <feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
-          <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
-        </filter>
-      </defs>
-      <rect width="460" height="90" style="fill:rgb(184,63,59)" x="360" y="100" transform="rotate(1)" filter="url(#f1)"/>
-      <rect width="465" height="100" style="fill:rgb(247,196,97)" x="150" y="100" transform="rotate(-6)" filter="url(#f1)"/>
-      <% if (staticMap) { %>
-        <rect width="225" height="680" style="fill:rgb(247,196,97)" x="750" y="360" transform="rotate(-5)" filter="url(#f1)"/>
-      <% } %>
-    </svg>
     <div class="container">
-      <a class="heading" href="/">Food Truck Finder</a>
-      <div class="caption">Locating food trucks in San Francisco since 2018</div>
+      <header>
+        <a class="heading" href="/">Food Truck Finder</a>
+        <div class="caption">Locating food trucks in San Francisco since 2018</div>
+      </header>
       <form class="search" method="post" action="/foodTrucks">
         <input class="search-box" type="text" name="searchPhrase" placeholder="Enter a location"></input>
         <button type="submit">
@@ -43,6 +31,7 @@
         <% } %>
         <% if (staticMap) { %>
           <div class="listing">
+            <div class="listing-background"></div>
             <% for (let i = 0; i < foodTrucks.length; i++) {
               if (foodTrucks[i].latDiff <= .025 && foodTrucks[i].longDiff <= .025) { %>
               <div class="listing-row">

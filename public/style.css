@@ -8,16 +8,25 @@ body {
   letter-spacing: .5px;
   color: #3D3E42;
   margin: 0;
-  overflow-x: hidden;
-  overflow-y: hidden;
+}
+
+header {
+  width: 100%;
+  position: relative;
+  height: 200px;
 }
 
 .heading {
   font-family: "Dirty Ego";
   font-size: 64px;
-  margin-top: 40px;
   letter-spacing: 5px;
   transform: rotate(-4deg);
+  background-color: rgb(247,196,97);
+  padding: 20px;
+  position: absolute;
+  top: 50px;
+  z-index: 5;
+  box-shadow: 10px 10px 50px #3D3E42;
 }
 
 a {
@@ -25,7 +34,11 @@ a {
   color: #3D3E42;
 }
 
-a:hover, button:hover {
+a:hover {
+  color: rgba(61,62,66,.8);
+}
+
+button:hover {
   opacity: .8;
 }
 
@@ -33,23 +46,20 @@ a:hover, button:hover {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 70%;
-  position: fixed;
-  top: 40px;
-  left: 50%;
-  transform: translate(-50%, 0);
-  z-index: 5;
+  width: 900px;
+  margin: auto;
 }
 
 .caption {
-  margin-left: 240px;
-  margin-top: 15px;
   color: white;
-}
-
-svg {
-  position: relative;
-  z-index: 1;
+  background-color: rgb(184,63,59);
+  padding: 30px;
+  transform: rotate(1deg);
+  position: absolute;
+  top: 135px;
+  left: 250px;
+  z-index: 3;
+  box-shadow: 10px 10px 50px #3D3E42;
 }
 
 .search {
@@ -102,6 +112,8 @@ input:focus, button:focus {
 
 .map {
   border: 1px solid #3D3E42;
+  z-index: 5;
+  position: relative;
 }
 
 .map-listing {
@@ -111,6 +123,19 @@ input:focus, button:focus {
 
 .listing {
   margin-left: 20px;
+  position: relative;
+}
+
+.listing-background {
+  position: absolute;
+  z-index: 1;
+  background-color: rgb(247,196,97);
+  height: 680px;
+  width: 225px;
+  top: -55px;
+  left: -10px;
+  transform: rotate(-4deg);
+  box-shadow: 10px 10px 50px #3D3E42;
 }
 
 .listing-row {
@@ -120,6 +145,8 @@ input:focus, button:focus {
   margin-bottom: 25px;
   font-weight: 400;
   align-items: center;
+  z-index: 5;
+  position: relative;
 }
 
 .listing-number {
@@ -133,10 +160,12 @@ input:focus, button:focus {
   background-color: #BA3E37;
   font-size: 18px;
   color: white;
+  z-index: 5;
 }
 
 .listing-name {
   margin-bottom: 3px;
+  z-index: 5;
 }
 
 .listing-address {
@@ -144,4 +173,5 @@ input:focus, button:focus {
   color: grey;
   font-size: 14px;
   font-weight: 300;
+  z-index: 5;
 }
