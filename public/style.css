@@ -9,6 +9,7 @@ body {
   color: #3D3E42;
   margin: 0;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 header {
@@ -37,7 +38,6 @@ header {
   color: white;
 }
 
-
 svg {
   position: relative;
   z-index: 1;
@@ -59,6 +59,13 @@ svg {
   letter-spacing: .5px;
   border: 1px solid #3D3E42;
   font-size: 14px;
+}
+
+.results {
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 300;
+  font-style: italic;
 }
 
 button {

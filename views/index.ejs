@@ -19,7 +19,7 @@
       <rect width="460" height="90" style="fill:rgb(184,63,59)" x="360" y="100" transform="rotate(1)" filter="url(#f1)"/>
       <rect width="465" height="100" style="fill:rgb(247,196,97)" x="150" y="100" transform="rotate(-6)" filter="url(#f1)"/>
       <% if (staticMap) { %>
-        <rect width="225" height="680" style="fill:rgb(247,196,97)" x="750" y="345" transform="rotate(-5)" filter="url(#f1)"/>
+        <rect width="225" height="680" style="fill:rgb(247,196,97)" x="750" y="360" transform="rotate(-5)" filter="url(#f1)"/>
       <% } %>
     </svg>
     <div class="container">
@@ -31,6 +31,7 @@
           <i class="material-icons">arrow_forward</i>
         </button>
       </form>
+      <div class="results">Showing results for "<%= name %>"</div>
       <div class="map-listing">
         <% if (staticMap) { %>
           <img class="map" alt="Map" src="<%=embedMap%>">

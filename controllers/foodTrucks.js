@@ -43,6 +43,7 @@ router.get('/:searchPhrase', (req, res) => {
       embedMap: 'https://maps.googleapis.com/maps/api/staticmap?center=' + latitude + ',' + longitude + markers + '&markers=color:blue%7Clabel:' + name + '%7C' + latitude + ',' + longitude + '&key=' + process.env.KEY,
       staticMap: 1,
       foodTrucks: foodTrucks,
+      name: name
     });
   })).catch(error => {
     console.log('error:', error);
