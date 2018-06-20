@@ -23,12 +23,8 @@
       <% } %>
     </svg>
     <div class="container">
-      <header>
-        Food Truck Finder
-      </header>
-      <div class="caption">
-        Locating food trucks in San Francisco since 2018
-      </div>
+      <header>Food Truck Finder</header>
+      <div class="caption">Locating food trucks in San Francisco since 2018</div>
       <form class="search" method="post" action="/foodTrucks">
         <input class="search-box" type="text" name="searchPhrase" placeholder="Enter a location"></input>
         <button type="submit">
@@ -42,10 +38,8 @@
         else { %>
           <img class="map" alt="Map" src="https://maps.googleapis.com/maps/api/staticmap?center=San+Francisco,CA&zoom=12&size=600x600&maptype=roadmap">
         <% } %>
-
         <% if (staticMap) { %>
           <div class="listing">
-
             <% for (let i = 0; i < foodTrucks.length; i++) {
               if (foodTrucks[i].latDiff <= .025 && foodTrucks[i].longDiff <= .025) { %>
               <div class="listing-row">
@@ -63,13 +57,9 @@
               </div>
               <% }
             } %>
-
           </div>
         <% } %>
-
       </div>
     </div>
-
-
   </body>
 </html>
