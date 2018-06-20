@@ -42,6 +42,8 @@ app.get('/foodTrucks/:searchPhrase', (req, res) => {
       foodTrucks.push({
         name: response2.data[i].applicant,
         address: response2.data[i].address,
+        latDiff: Math.abs(latitude - response2.data[i].latitude),
+        longDiff: Math.abs(longitude - response2.data[i].longitude),
         distance: Math.abs(latitude - response2.data[i].latitude) + Math.abs(longitude - response2.data[i].longitude),
         latitude: response2.data[i].latitude,
         longitude: response2.data[i].longitude
@@ -55,7 +57,8 @@ app.get('/foodTrucks/:searchPhrase', (req, res) => {
     res.render('index.ejs', {
       embedMap: 'https://maps.googleapis.com/maps/api/staticmap?center=' + latitude + ',' + longitude + markers + '&markers=color:blue%7Clabel:' + name + '%7C' + latitude + ',' + longitude + '&key=' + process.env.KEY,
       staticMap: 1,
-      foodTrucks: foodTrucks
+      foodTrucks: foodTrucks,
+
     });
   })).catch(error => {
     console.log('error:', error);

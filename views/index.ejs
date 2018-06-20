@@ -20,9 +20,12 @@
         else { %>
           <iframe width="600" height="600" frameborder="0" style="border:0" src="<%=embedMap%>" allowfullscreen class="map"></iframe>
         <% } %>
+
         <% if (staticMap) { %>
           <div class="listing">
-            <% for (let i = 0; i < foodTrucks.length; i++) { %>
+
+            <% for (let i = 0; i < foodTrucks.length; i++) {
+              if (foodTrucks[i].latDiff <= .025 && foodTrucks[i].longDiff <= .025) { %>
               <div class="listing-row">
                 <div class="listing-number">
                   <%= i + 1 %>
@@ -36,7 +39,9 @@
                   </div>
                 </div>
               </div>
-            <% } %>
+              <% }
+            } %>
+
           </div>
         <% } %>
 
