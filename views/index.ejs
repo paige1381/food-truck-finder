@@ -7,14 +7,21 @@
   </head>
   <body>
 
+
     <div class="container">
       <form class="search" method="post" action="/foodTrucks">
         <input class="search-box" type="text" name="searchPhrase" placeholder="Enter a location"></input>
         <input type="submit" value="Go">
       </form>
 
-      <iframe width="600" height="450" frameborder="0" style="border:0" src="<%=embedMap%>" allowfullscreen class="map"></iframe>
+      <% if (staticMap) { %>
+        <img alt="Map" src="<%=embedMap%>">
+      <% }
+      else { %>
+        <iframe width="600" height="600" frameborder="0" style="border:0" src="<%=embedMap%>" allowfullscreen class="map"></iframe>
+      <% } %>
     </div>
+
 
   </body>
 </html>
