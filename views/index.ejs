@@ -40,7 +40,7 @@
           <img class="map" alt="Map" src="<%=embedMap%>">
         <% }
         else { %>
-          <iframe width="600" height="600" frameborder="0" style="border:0" src="<%=embedMap%>" allowfullscreen class="map"></iframe>
+          <img class="map" alt="Map" src="https://maps.googleapis.com/maps/api/staticmap?center=San+Francisco,CA&zoom=12&size=600x600&maptype=roadmap">
         <% } %>
 
         <% if (staticMap) { %>
