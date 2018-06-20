@@ -7,19 +7,40 @@
   </head>
   <body>
 
-
     <div class="container">
+      <header>Food Truck Finder</header>
       <form class="search" method="post" action="/foodTrucks">
         <input class="search-box" type="text" name="searchPhrase" placeholder="Enter a location"></input>
-        <input type="submit" value="Go">
+        <input class="button" type="submit" value="Go">
       </form>
+      <div class="map-listing">
+        <% if (staticMap) { %>
+          <img alt="Map" src="<%=embedMap%>">
+        <% }
+        else { %>
+          <iframe width="600" height="600" frameborder="0" style="border:0" src="<%=embedMap%>" allowfullscreen class="map"></iframe>
+        <% } %>
+        <% if (staticMap) { %>
+          <div class="listing">
+            <% for (let i = 0; i < foodTrucks.length; i++) { %>
+              <div class="listing-row">
+                <div class="listing-number">
+                  <%= i + 1 %>
+                </div>
+                <div class="listing-info">
+                  <div class="listing-name">
+                    <%= foodTrucks[i].name %>
+                  </div>
+                  <div class="listing-address">
+                    <%= foodTrucks[i].address %>
+                  </div>
+                </div>
+              </div>
+            <% } %>
+          </div>
+        <% } %>
 
-      <% if (staticMap) { %>
-        <img alt="Map" src="<%=embedMap%>">
-      <% }
-      else { %>
-        <iframe width="600" height="600" frameborder="0" style="border:0" src="<%=embedMap%>" allowfullscreen class="map"></iframe>
-      <% } %>
+      </div>
     </div>
 
 

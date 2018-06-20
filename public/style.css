@@ -1,3 +1,9 @@
+header {
+  font-family: Arial;
+  font-size: 32px;
+  margin-top: 20px;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -16,4 +22,31 @@
 .search-box {
   margin: 20px 10px 20px 0;
   width: 30%;
+  height: 20px;
+}
+
+.button {
+  cursor: pointer;
+  height: 26px;
+}
+
+.map-listing {
+  display: flex;
+  flex-direction: row;
+}
+
+.listing {
+  margin-left: 20px;
+  font-family: Arial;
+}
+
+.listing-row {
+  display: flex;
+  flex-direction: row;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+
+.listing-number {
+  margin-right: 10px;
 }
