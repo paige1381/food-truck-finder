@@ -46,16 +46,12 @@ app.get('/foodTrucks/:searchPhrase', (req, res) => {
         latitude: response2.data[i].latitude,
         longitude: response2.data[i].longitude
       })
-      console.log(foodTrucks[i].name);
-      console.log(foodTrucks[i].distance);
     }
-    console.log(foodTrucks.sort((a, b) => a.distance - b.distance));
     foodTrucks = foodTrucks.sort((a, b) => a.distance - b.distance).slice(0,9);
     let markers = "&zoom=14&size=600x600&maptype=roadmap";
     for (let i = 0; i < foodTrucks.length; i++) {
       markers = markers + '&markers=color:red%7Clabel:' + (i + 1) + '%7C' + foodTrucks[i].latitude + ',' + foodTrucks[i].longitude;
     }
-    console.log('https://maps.googleapis.com/maps/api/staticmap?center=' + latitude + ',' + longitude + markers + '&key=' + process.env.KEY);
     res.render('index.ejs', {
       embedMap: 'https://maps.googleapis.com/maps/api/staticmap?center=' + latitude + ',' + longitude + markers + '&markers=color:blue%7Clabel:' + name + '%7C' + latitude + ',' + longitude + '&key=' + process.env.KEY,
       staticMap: 1,
