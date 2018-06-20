@@ -31,7 +31,9 @@
           <i class="material-icons">arrow_forward</i>
         </button>
       </form>
-      <div class="results">Showing results for "<%= name %>"</div>
+      <% if (staticMap) { %>
+        <div class="results">Showing results for "<%= name %>"</div>
+      <% } %>
       <div class="map-listing">
         <% if (staticMap) { %>
           <img class="map" alt="Map" src="<%=embedMap%>">
