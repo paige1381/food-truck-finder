@@ -12,12 +12,21 @@ body {
   overflow-y: hidden;
 }
 
-header {
+.heading {
   font-family: "Dirty Ego";
   font-size: 64px;
   margin-top: 40px;
   letter-spacing: 5px;
   transform: rotate(-4deg);
+}
+
+a {
+  text-decoration: none;
+  color: #3D3E42;
+}
+
+a:hover, button:hover {
+  opacity: .8;
 }
 
 .container {
