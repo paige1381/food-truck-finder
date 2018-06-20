@@ -1,15 +1,46 @@
+@font-face {
+  font-family: "Dirty Ego";
+  src: url('../fonts/DIRTYEGO.ttf');
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  letter-spacing: .5px;
+  color: #3D3E42;
+  margin: 0;
+  overflow-x: hidden;
+}
+
 header {
-  font-family: Arial;
-  font-size: 32px;
-  margin-top: 20px;
+  font-family: "Dirty Ego";
+  font-size: 64px;
+  margin-top: 40px;
+  letter-spacing: 5px;
+  transform: rotate(-4deg);
 }
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: auto;
   width: 70%;
+  position: fixed;
+  top: 40px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 5;
+}
+
+.caption {
+  margin-left: 240px;
+  margin-top: 15px;
+  color: white;
+}
+
+
+svg {
+  position: relative;
+  z-index: 1;
 }
 
 .search {
@@ -17,17 +48,44 @@ header {
   flex-direction: row;
   align-items: center;
   width: 70%;
+  margin-top: 45px;
 }
 
 .search-box {
   margin: 20px 10px 20px 0;
-  width: 30%;
-  height: 20px;
+  width: 40%;
+  padding: 10px;
+  font-family: 'Source Sans Pro', sans-serif;
+  letter-spacing: .5px;
+  border: 1px solid #3D3E42;
+  font-size: 14px;
 }
 
-.button {
+button {
   cursor: pointer;
-  height: 26px;
+  font-family: 'Source Sans Pro', sans-serif;
+  letter-spacing: .5px;
+  font-size: 14px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #3D3E42;
+  border: none;
+}
+
+input:focus, button:focus {
+  outline: none;
+}
+
+.material-icons {
+  color: white;
+}
+
+.map {
+  border: 1px solid #3D3E42;
 }
 
 .map-listing {
@@ -37,16 +95,37 @@ header {
 
 .listing {
   margin-left: 20px;
-  font-family: Arial;
 }
 
 .listing-row {
   display: flex;
   flex-direction: row;
   text-transform: capitalize;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
+  font-weight: 400;
+  align-items: center;
 }
 
 .listing-number {
   margin-right: 10px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #BA3E37;
+  font-size: 18px;
+  color: white;
+}
+
+.listing-name {
+  margin-bottom: 3px;
+}
+
+.listing-address {
+  font-style: italic;
+  color: grey;
+  font-size: 14px;
+  font-weight: 300;
 }
