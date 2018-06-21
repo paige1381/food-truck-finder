@@ -6,7 +6,8 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
   res.render('index.ejs', {
-    staticMap: 0
+    staticMap: 0,
+    embedMap: 'https://maps.googleapis.com/maps/api/staticmap?center=San+Francisco,CA&zoom=12&size=600x600&maptype=roadmap'  + '&key=' + process.env.KEY
   });
 });
 
