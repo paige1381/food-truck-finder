@@ -133,8 +133,8 @@ input:focus, button:focus {
   height: 680px;
   width: 225px;
   top: -55px;
-  left: -10px;
-  transform: rotate(-4deg);
+  left: 0;
+  transform: rotate(-5deg);
   box-shadow: 10px 10px 50px #3D3E42;
 }
 
