@@ -114,6 +114,7 @@ input:focus, button:focus {
   border: 1px solid #3D3E42;
   z-index: 5;
   position: relative;
+  margin-bottom: 50px;
 }
 
 .map-listing {
